@@ -14,13 +14,13 @@ warnings.filterwarnings('ignore')
 #pythonnet.set_runtime("/usr/bin/mono") 
 
 # Set the base path to where the RawFileReader repository is cloned in the Docker container
-base_path = '/RawFileReader'
+base_path = 'C:\\data\\RawFileReader'
 
 # Update the paths to the DLL files based on the RawFileReader repository location in the Docker container
-clr.AddReference(os.path.join(base_path, 'Libs/Net471/ThermoFisher.CommonCore.Data.dll'))
-clr.AddReference(os.path.join(base_path, 'Libs/Net471/ThermoFisher.CommonCore.RawFileReader.dll'))
-clr.AddReference(os.path.join(base_path, 'Libs/Net471/ThermoFisher.CommonCore.BackgroundSubtraction.dll'))
-clr.AddReference(os.path.join(base_path, 'Libs/Net471/ThermoFisher.CommonCore.MassPrecisionEstimator.dll'))
+clr.AddReference(os.path.join(base_path, 'Libs\\Net471\\ThermoFisher.CommonCore.Data.dll'))
+clr.AddReference(os.path.join(base_path, 'Libs\\Net471\\ThermoFisher.CommonCore.RawFileReader.dll'))
+clr.AddReference(os.path.join(base_path, 'Libs\\Net471\\ThermoFisher.CommonCore.BackgroundSubtraction.dll'))
+clr.AddReference(os.path.join(base_path, 'Libs\\Net471\\ThermoFisher.CommonCore.MassPrecisionEstimator.dll'))
 
 # Continue with the rest of your script imports
 from System import *

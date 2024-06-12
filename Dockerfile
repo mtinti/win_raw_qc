@@ -1,9 +1,5 @@
 # Use a Windows Server Core image with Python 3.9
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
-
-# Install Python 3.9
-ADD https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe C:\\TEMP\\python-installer.exe
-RUN C:\\TEMP\\python-installer.exe /quiet InstallAllUsers=1 PrependPath=1 && del C:\\TEMP\\python-installer.exe
+FROM winamd64/python:3
 
 # Install Chocolatey - package manager
 RUN powershell -Command \
@@ -25,8 +21,8 @@ COPY requirements.txt C:/data/
 RUN pip install --no-cache-dir -r C:/data/requirements.txt
 
 # Clone repositories
-RUN git clone https://github.com/thermofisherlsms/RawFileReader.git C:\\data\\RawFileReader \
-    && git clone https://github.com/mtinti/raw_qc.git C:\\data\\raw_qc
+RUN git clone https://github.com/thermofisherlsms/RawFileReader.git C:\\data\\RawFileReader
+RUN git clone https://github.com/mtinti/win_raw_qc.git C:\\data\\raw_qc
 
 # Set the working directory
 WORKDIR C:/data
