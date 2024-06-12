@@ -21,7 +21,7 @@ COPY requirements.txt C:/data/
 RUN pip install --no-cache-dir -r C:/data/requirements.txt
 
 # Clone repositories
-RUN git clone https://github.com/thermofisherlsms/RawFileReader.git C:\\data\\RawFileReader \
+RUN git clone https://github.com/thermofisherlsms/RawFileReader.git C:\\data\\RawFileReader
 RUN git clone https://github.com/mtinti/win_raw_qc.git C:\\data\\raw_qc
 
 # Set the working directory
