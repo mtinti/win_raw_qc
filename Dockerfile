@@ -28,4 +28,4 @@ RUN git clone https://github.com/mtinti/win_raw_qc.git C:\\data\\raw_qc
 WORKDIR C:/data
 
 # Set the entry point to run your script
-ENTRYPOINT ["python", "C:\\data\\raw_qc\\make_qc.py"]
+# ENTRYPOINT ["python", "C:\\data\\win_raw_qc\\make_qc.py"]
