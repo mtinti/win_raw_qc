@@ -100,6 +100,10 @@ if __name__ == '__main__':
     rawFile = RawFileReaderAdapter.FileFactory(raw_file_path)
     rawFile.SelectInstrument(Device.MS, 1)
 
+    deviceNames = rawFile.GetAllInstrumentNamesFromInstrumentMethod()
+    for device in deviceNames:
+        print('Instrument method: {}'.format(device))
+
     firstScanNumber = rawFile.RunHeaderEx.FirstSpectrum
     lastScanNumber = rawFile.RunHeaderEx.LastSpectrum
 
@@ -108,7 +112,6 @@ if __name__ == '__main__':
 
     instrument_name = rawFile.GetInstrumentData().Name
     file_name = os.path.basename(raw_file_path)
-
     print(f'Analysing {file_name} file from {instrument_name}')
     print(f'startTime {startTime} endTime: {endTime}')
     out_list = ReadScanInformation(rawFile, firstScanNumber, lastScanNumber)
